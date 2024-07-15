@@ -1,0 +1,1008 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{libPath}}/css/select2.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{libPath}}/css/icheck-bootstrap.min.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/adminlte.css">
+<link rel="stylesheet" href="{{libPath}}/css/before-after-style.css">
+
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-nblue" style="display: flex; justify-content: space-between; align-items: left;">
+        <!-- 1st div -->
+        <div>
+            <a class="navbar-brand" href="/app/site/hosting/scriptlet.nl?script=1779&deploy=1">
+                <img src="https://8572983.app.netsuite.com/core/media/media.nl?id=7334&c=8572983&h=E6mbZ7NR5B1Y2FfTsmSjoPweQeSuTjdWSxqIvbFcUwA2wPmS" width="" height="60" alt="">
+            </a>
+        </div>
+    
+        <!-- 2nd div -->
+        <div style="display: flex; align-items: left;">
+            <ul class="navbar-nav ml-auto" style="display: flex; align-items: left; margin: 0;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#0" style="display: flex; align-items: left;">
+                        <span style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; margin-right: 10px;">Hello {name}</span>
+                        <div class="user-panel image">
+                            <img src="{profile_image}" class="img-circle elevation-2" alt="User Image" style="width: 40px; height: 40px; border-radius: 50%;">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                        <a href="https://8572983.app.netsuite.com/pages/nllogoutnoback.jsp" class="dropdown-item dropdown-footer">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!--5s Audit Form Start-->
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10 ">
+                <h4 class="section-title">Before & After Form</h4>
+            </div>
+        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <select class="form-control select2" data-placeholder="Select Project" id="project" style="width: 100%;" required>
+                            <option>Select Project</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!--Photos section Start-->
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="form-title">Before Photos</h5>
+                        </div>
+                        <div class="col">
+                            <h5 class="form-title">After Photos</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4 pr-4">
+                    <!-- Photo 1 -->
+                    <div class="form-group clearfix">
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo1" id="before_photo1" data-id="1">
+                                                <label class="custom-file-label" for="before_photo1">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo1_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo1_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo1" id="after_photo1" data-id="2">
+                                                <label class="custom-file-label" for="after_photo1">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo1_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo1_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo2" id="before_photo2" data-id="1">
+                                                <label class="custom-file-label" for="before_photo2">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo2_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo2_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo2" id="after_photo2" data-id="2">
+                                                <label class="custom-file-label" for="after_photo2">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo2_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo2_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo3" id="before_photo3" data-id="1">
+                                                <label class="custom-file-label" for="before_photo3">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo3_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo3_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo3" id="after_photo3" data-id="2">
+                                                <label class="custom-file-label" for="after_photo3">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo3_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo3_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo4" id="before_photo4" data-id="1">
+                                                <label class="custom-file-label" for="before_photo4">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo4_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo4_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo4" id="after_photo4" data-id="2">
+                                                <label class="custom-file-label" for="after_photo4">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo4_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo4_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo5" id="before_photo5" data-id="1">
+                                                <label class="custom-file-label" for="before_photo5">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo5_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo5_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo5" id="after_photo5" data-id="2">
+                                                <label class="custom-file-label" for="after_photo5">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo5_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo5_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo6" id="before_photo6" data-id="1">
+                                                <label class="custom-file-label" for="before_photo6">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo6_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo6_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo6" id="after_photo6" data-id="2">
+                                                <label class="custom-file-label" for="after_photo6">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo6_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo6_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo7" id="before_photo7" data-id="1">
+                                                <label class="custom-file-label" for="before_photo7">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo7_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo7_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo7" id="after_photo7" data-id="2">
+                                                <label class="custom-file-label" for="after_photo7">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo7_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo7_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo8" id="before_photo8" data-id="1">
+                                                <label class="custom-file-label" for="before_photo8">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo8_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo8_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo8" id="after_photo8" data-id="2">
+                                                <label class="custom-file-label" for="after_photo8">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo8_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo8_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo9" id="before_photo9" data-id="1">
+                                                <label class="custom-file-label" for="before_photo9">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo9_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo9_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo9" id="after_photo9" data-id="2">
+                                                <label class="custom-file-label" for="after_photo9">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo9_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo9_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo10" id="before_photo10" data-id="1">
+                                                <label class="custom-file-label" for="before_photo10">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo10_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo10_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo10" id="after_photo10" data-id="2">
+                                                <label class="custom-file-label" for="after_photo10">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo10_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo10_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo11" id="before_photo11" data-id="1">
+                                                <label class="custom-file-label" for="before_photo11">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo11_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo11_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo11" id="after_photo11" data-id="2">
+                                                <label class="custom-file-label" for="after_photo11">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo11_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo11_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo12" id="before_photo12" data-id="1">
+                                                <label class="custom-file-label" for="before_photo12">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo12_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo12_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo12" id="after_photo12" data-id="2">
+                                                <label class="custom-file-label" for="after_photo12">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo12_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo12_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo13" id="before_photo13" data-id="1">
+                                                <label class="custom-file-label" for="before_photo13">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo13_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo13_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo13" id="after_photo13" data-id="2">
+                                                <label class="custom-file-label" for="after_photo13">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo13_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo13_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo14" id="before_photo14" data-id="1">
+                                                <label class="custom-file-label" for="before_photo14">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo14_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo14_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo14" id="after_photo14" data-id="2">
+                                                <label class="custom-file-label" for="after_photo14">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo14_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo14_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="before_photo15" id="before_photo15" data-id="1">
+                                                <label class="custom-file-label" for="before_photo15">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="before_photo15_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="before_photo15_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="after_photo15" id="after_photo15" data-id="2">
+                                                <label class="custom-file-label" for="after_photo15">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="info-box"  id="after_photo15_info">
+                                            <div class="info-box-icon">
+                                                <a href="#0" class="close czo-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                                <img id="after_photo15_img" src="" class="align-self-start" alt="...">
+                                            </div>
+
+                                            <div class="info-box-content">
+                                                <span class="info-box-text"></span>
+                                                <span class="info-box-number"></span>
+                                            </div>
+                                            <a href="#0" class="close czo-main-img-close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Photo section ends-->
+            </div>
+            <!-- Button  -->
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10 mr-3">
+                    <div style="padding-left: 15px">
+                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right" id="save-btn">SAVE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding-top: 2px">
+                <div class="col col-md-10 mr-3">
+                    <div style="padding-left: 15px">
+                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right" id="save-email-btn">SAVE & EMAIL</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Button ends -->
+            <!--    </div>-->
+        </section>
+    </div>
+    <!-- ./5S audit form ends-->
+    <footer class="main-footer">
+        Copyright &copy; 2023 National Group LTD. All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="{{libPath}}/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/popper.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/select2.full.min.js"></script>
+<!--<script src="{{libPath}}/js/select2.full.min.js"></script>-->
+<script type="application/javascript">
+    (() => {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+        $('.btn-tab-prev').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().prev().find('a').attr('id')).tab('show')
+        })
+        $('.btn-tab-next').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().next().find('a').attr('id')).tab('show')
+        })
+    })();
+    let data = '{data}';
+    function readURL(input, id) {
+        console.log('readURL: id', id);
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#' + id).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function save(notify) {
+        require(['N/currentRecord', 'N/ui/dialog'], (ns_currentRecord, ns_dialog) => {
+            let record = ns_currentRecord.get();
+            let id = data.details.id || '';
+            let values = {};
+            let radioFieldIds = [];
+            $("input[type='radio']").each(function () {
+                let name = $(this).attr('name');
+                if (name) {
+                    radioFieldIds.push(name);
+                }
+            });
+            [...new Set(radioFieldIds)].forEach((fieldId) => {
+                let notesFieldId = `${fieldId}_notes`;
+                values[fieldId] = $(`#${fieldId}`).val();
+                values[notesFieldId] = $(`#${notesFieldId}`).val();
+            });
+            ['project', 'comments'].forEach((fieldId) => {
+                values[fieldId] = $(`#${fieldId}`).val();
+            });
+            values.comments = $('#comments').val();
+            values.project = ($('#project').select2('data')[0] || {}).id || '';
+            values.notify = notify;
+
+            record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify({id, values})});
+            if (!values.project || values.project == 'Select Project') {
+                ns_dialog.alert({message: 'Please select a Project before submitting.'});
+            } else {
+                setTimeout(() => {
+                    document.main_form.submit();
+                }, 1000);
+            }
+        });
+    }
+
+    <!--Show/hide Textarea on selection of radio button with value "Yes"-->
+    $(document).ready(() => {
+        $('.uir-page-title').closest('tr').hide();
+        $('#custpage_czo_file').hide();
+        data.projects.forEach((project) => {
+            let {id, name} = project;
+            $('#project').append(new Option(name, id, false, id == data.projectId));
+        });
+        $('.info-box').hide();
+        $("input[type='radio']").change(function () {
+            let name = $(this).attr('name');
+            if (name) {
+                let value = $(this).val();
+                let selector = `[name='${name}_notes']`;
+                $(`#${name}`).val(value);
+                if (value == "1") {
+                    $(selector).show();
+                } else {
+                    $(selector).hide();
+                }
+            }
+        });
+        $('input:file').change(function () {
+            let id = $(this).attr('id');
+            console.log('id: ', id);
+            let imgId = id + '_img';
+            let fileName = ($(this).val() || '').replace("C:\\fakepath\\", '');
+            let fileSize = (this.files[0].size * 1 / 1000).toFixed(2) + ' KB';
+            let name = ($(this).attr('name') || '').replace(/[0-9]/g, '');
+            let dataId = $(this).attr('data-id');
+            if (dataId) {
+                let nextDataId = dataId * 1 + 1;
+                $(`#${name}${nextDataId}`).closest('.row').show();
+            }
+            $(this).closest('.input-group').hide();
+            readURL(this, imgId);
+            $('#' + imgId).closest('.info-box').find('.info-box-text').text(fileName);
+            $('#' + imgId).closest('.info-box').find('.info-box-number').text(fileSize);
+            $('#' + imgId).closest('.info-box').show();
+        });
+        $('.close').click(function () {
+            let id = $(this).closest('.info-box').attr('id').replace('_info', '');
+            console.log('on close file id: ', id);
+            $(this).closest('.info-box').hide();
+            $('#' + id).closest('.input-group').show();
+        });
+        $('#project').change(function() {
+            let id = ($('#project').select2('data')[0] || {}).id || '';
+            if (id) {
+                window.location.href = data.scriptUrl + '&projectId=' + id;
+            }
+        });
+        Object.keys(data.details).forEach(function (key) {
+            let imgSrc = data.details[key]
+            if (key != 'id' && imgSrc) {
+                let fileInputId = key.replace('Text', '');
+                let imgId = fileInputId + '_img';
+                $('#' + imgId).attr('src', imgSrc);
+                $('#' + fileInputId).closest('.input-group').hide();
+                $('#' + imgId).closest('.info-box').find('.info-box-text').text(fileInputId.replace(/_/g, ' ').replace('photo', 'photo #'));
+                // $('#' + imgId).closest('.info-box').find('.info-box-number').text(fileSize);
+                $('#' + imgId).closest('.info-box').show();
+            }
+        });
+
+        $('#save-btn').click(() => {
+            save(false)
+        });
+        $('#save-email-btn').click(() => {
+            save(true)
+        });
+    });
+</script>

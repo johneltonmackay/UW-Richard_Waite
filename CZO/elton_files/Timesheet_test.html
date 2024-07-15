@@ -1,0 +1,356 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{libPath}}/css/select2.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{libPath}}/css/icheck-bootstrap.min.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/adminlte.css">
+<link rel="stylesheet" href="{{libPath}}/css/style.css">
+
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-nblue" style="display: flex; justify-content: space-between; align-items: left;">
+        <!-- 1st div -->
+        <div>
+            <a class="navbar-brand" href="/app/site/hosting/scriptlet.nl?script=1779&deploy=1">
+                <img src="https://8572983.app.netsuite.com/core/media/media.nl?id=7334&c=8572983&h=E6mbZ7NR5B1Y2FfTsmSjoPweQeSuTjdWSxqIvbFcUwA2wPmS" width="" height="60" alt="">
+            </a>
+        </div>
+    
+        <!-- 2nd div -->
+        <div style="display: flex; align-items: left;">
+            <ul class="navbar-nav ml-auto" style="display: flex; align-items: left; margin: 0;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#0" style="display: flex; align-items: left;">
+                        <span style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; margin-right: 10px;">Hello {name}</span>
+                        <div class="user-panel image">
+                            <img src="{profile_image}" class="img-circle elevation-2" alt="User Image" style="width: 40px; height: 40px; border-radius: 50%;">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                        <a href="https://8572983.app.netsuite.com/pages/nllogoutnoback.jsp" class="dropdown-item dropdown-footer">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <!-- /.navbar -->
+
+
+    <!--5s Audit Form Start-->
+    <div class="container">
+        <input type="text" id="storeProjectID" style="display: none;">
+        <input type="text" id="storeProjectName" style="display: none;">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <h5 class="czo-main-section-title czo-hidden">Check <span id="czo-title-operation"></span></h5>
+            </div>
+            <div class="col-10 mx-auto d-flex flex-column align-items-center text-center">
+                <i id="success-icon" class="bi bi-check-circle-fill text-primary czo-hidden" style="font-size: 2rem;"></i>
+                <div id="success-label" class="czo-hidden">
+                    <label class="text-primary font-weight-bold" style="font-size: 1.5rem;">Check In Success!</label>
+                </div>
+            </div>                        
+            <div class="col col-md-10 czo-check-out czo-hidden text-center">
+                <label class="czo-section-title">Your are checked in to</label>
+                <h5 class="czo-section-title" id="czo-project-name">PRO1 Test Project</h5>
+            </div>
+        </div>
+        <!-- Main content -->
+        <section class="content" style="min-height: 540px; margin-top: -40px;">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group czo-page-init czo-hidden">
+                        <select class="form-control select2" data-placeholder="Select Project" id="project" style="width: 100%;" required>
+                            <option>Select Project</option>
+                        </select>
+                    </div>
+                    <div class="form-group czo-check-out czo-hidden text-center" style="margin-top: -20px;">
+                        <br>
+                        <div class="icheck-primary d-inline" style="padding-left: 15px">
+                            <input type="checkbox" id="meal_allowance">
+                            <label style="font-size: 16px" for="meal_allowance">
+                                I will be staying away from home tonight.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group czo-next-in czo-hidden">
+                        <div>
+                            <h5 class="czo-section-title" id="czo-project-name-next"></h5>
+                        </div>
+                    </div>
+                    <div class="form-group czo-hazzard-in czo-hidden">
+                        <br>
+                        <a href="#0" class="btn btn-secondary btn-lg btn-block" id="view-plan-btn" style="background-color: white; color: black; border: 2px solid black;">VIEW SAFETY PLAN</a>
+                        <br>
+                        <hr style="height: 1px; border: none; color: #333; background-color: #333;">
+                            <div class="row">
+                                <div class="col">
+                                    <label style="font-size: 16px">Daily Hazards & Controls</label>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary" id="editButton" style="background-color: white; color: black; border: 2px solid black;">
+                                        <i class="fas fa-pencil-alt"></i>&nbsp; Edit
+                                    </button>                                
+                                </div>
+                            </div>
+                        <br>
+                        <textarea class="form-control" id="daily_hazards" rows="6" placeholder="Write daily hazards & control.." required disabled></textarea>
+                        <br>
+                    </div>
+                    <div class="form-group czo-next-in czo-hidden">
+                        <div style="display: flex; align-items: flex-start;">
+                            <input type="checkbox" id="acknowledge-checkbox" style="transform: scale(1.5);">
+                            <label for="acknowledge-checkbox" style="font-size: 16px; word-break: break-all;">&nbsp;&nbsp; I acknowledge I have reviewed and understood the SSSP, daily hazards and controls</label>
+                        </div>                                                     
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Button  -->
+            <div class="row justify-content-md-center czo-button-row">
+                <div class="col col-md-10 mr-3">
+                    <div style="padding-left: 15px">
+                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right czo-hidden" id="nxt-btn">NEXT</a>
+                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right czo-hidden" id="submit-btn">CHECK <span id="czo-time-operation"></span> at <span id="czo-check-in-time"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Button ends -->
+
+            <!--    </div>-->
+        </section>
+    </div>
+    <!-- ./5S audit form ends-->
+    <footer class="main-footer">
+        Copyright &copy; 2023 National Group LTD. All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="{{libPath}}/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/popper.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/select2.full.min.js"></script>
+<!--<script src="{{libPath}}/js/select2.full.min.js"></script>-->
+<script type="application/javascript">
+    const setButtonTime = (selector) => {
+        let dt = new Date();
+        let hour = dt.getHours();
+        let minute = (dt.getMinutes() + '').padStart(2, '0');
+        let period = 'AM';
+        if (hour >= 12) {
+            hour-= 12;
+            period = 'PM';
+        }
+        $(`#${selector}`).text(`${hour}:${minute}${period}`);
+    };
+
+    const extractHoursMinutes = (time) => {
+        let isPM = time.indexOf('PM') > -1 ;
+        let timeElements = time.replace('AM', '').replace('PM', '').split(':');
+        return {
+            hours: +timeElements[0] + isPM ? 12 : 0,
+            minutes: +timeElements[1]
+        }
+    }
+
+    (() => {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+        $('.btn-tab-prev').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().prev().find('a').attr('id')).tab('show')
+        })
+        $('.btn-tab-next').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().next().find('a').attr('id')).tab('show')
+        })
+    })();
+    let data = '{data}';
+    console.log('data',data)
+    
+    $(document).ready(() => {
+        let selectedProjectJD = '';
+        $('.uir-page-title').closest('tr').hide();
+        setTimeout(() => {
+            if (data.id) {
+                $('#czo-time-operation').text('OUT');
+                $('.czo-check-out').toggleClass('czo-hidden');
+                $('#czo-project-name').text(data.projectText);
+                $('#storeProjectID').val(data.projectId);
+                let dataProjectId = data.projectId
+                let dataProjects = data.projects.find(project => project.id === dataProjectId);
+                selectedHazzards = dataProjects ? dataProjects.dailyHazzards : '';
+                selectedJobDocs = dataProjects ? dataProjects.jobDocsURL : '';
+
+                $('#daily_hazards').val(selectedHazzards);
+                $('#view-plan-btn').attr('href', selectedJobDocs).attr('target', '_blank');
+
+                $('#success-icon').toggleClass('czo-hidden');
+                $('#submit-btn').toggleClass('czo-hidden');
+                $('#czo-hazzard-out').css('margin-top', '-150px').toggleClass('czo-hidden');
+                $('#success-label').toggleClass('czo-hidden');
+            } else {
+                $('.czo-page-init').toggleClass('czo-hidden');
+                $('.czo-check-in').toggleClass('czo-hidden');
+                $('#czo-time-operation').text('IN');
+                $('#czo-title-operation').text('In');
+                $('#nxt-btn').toggleClass('czo-hidden');
+                $('.czo-main-section-title').toggleClass('czo-hidden');
+            }
+
+            let projectId = document.getElementById('storeProjectID').value;
+            console.log('projectId:', projectId);
+            if (projectId) {
+                $('.czo-hazzard-in').toggleClass('czo-hidden');
+            }
+        }, 1000);
+
+        
+        data.projects.forEach((project) => {
+            let {id, name, jobDocsURL } = project;
+            $('#project').append(new Option(name, id, false, false));
+        });
+
+        $('#project').select2();
+
+        $('#project').on('change', function() {
+            // Get the selected value
+            let selectedProjectId = $(this).val();
+            // Find the corresponding project object from the data source
+            let selectedProject = data.projects.find(project => project.id === selectedProjectId);
+            // Retrieve the jobDocsURL from the selected project
+            selectedProjectJD = selectedProject ? selectedProject.jobDocsURL : '';
+            selectedName = selectedProject ? selectedProject.name : '';
+            selectedID = selectedProject ? selectedProject.id : '';
+            selectedHazzards = selectedProject ? selectedProject.dailyHazzards : '';
+        });
+
+        $('#nxt-btn').click(() => {
+            // Check if a project is selected
+            if (!selectedID) {
+                alert('Please select a Project before submitting.');
+                return; // Prevent further execution
+            }
+            console.log('selectedProjectJD', selectedProjectJD);
+            console.log('selectedName', selectedName);
+            document.getElementById('storeProjectID').value = selectedID;
+            document.getElementById('storeProjectName').value = selectedName;
+            document.getElementById('daily_hazards').value = selectedHazzards;
+
+
+            $('#view-plan-btn').attr('href', selectedProjectJD).attr('target', '_blank');
+            $('#nxt-btn').hide();
+            $('.czo-page-init').hide();
+            $('.czo-next-in').toggleClass('czo-hidden');
+            $('.czo-hazzard-in').toggleClass('czo-hidden');
+            $('.czo-main-section-title').hide();
+            $('#submit-btn').toggleClass('czo-hidden');
+
+            let projectName = document.getElementById('storeProjectName').value;
+            console.log('projectName:', projectName);
+            $('#czo-project-name-next').text(projectName);
+        });
+
+        $('#editButton').click(() => {
+            $('#daily_hazards').removeAttr('disabled');
+        });
+
+        $('#submit-btn').click(() => {
+            require(['N/currentRecord', 'N/ui/dialog', 'N/format'], (ns_currentRecord, ns_dialog, ns_format) => {
+                let record = ns_currentRecord.get();
+                let id = data.id || '';
+                let projId = data.projects.id || '';
+                let values = {};
+                let currentDate = new Date();
+                let {hours, minutes} = extractHoursMinutes($(`#czo-check-in-time`).text());
+                currentDate.setHours(hours);
+                currentDate.setMinutes(minutes);
+                
+                if (id) {
+                    values.check_out_time = ns_format.format({value: new Date(), type: ns_format.Type.DATETIME, timezone: ns_format.Timezone.PACIFIC_AUCKLAND});
+                    console.log('values.check_out_time', values.check_out_time)
+
+                    if (jQuery('#meal_allowance').is(":checked")) {
+                        values.meal_allowance = true;
+                    }
+                } else {
+                    values.date = ns_format.format({value: new Date(), type: ns_format.Type.DATETIME, timezone: ns_format.Timezone.PACIFIC_AUCKLAND});
+                    values.check_in_time = ns_format.format({value: new Date(), type: ns_format.Type.DATETIME, timezone: ns_format.Timezone.PACIFIC_AUCKLAND});
+                    console.log('values.date', values.date)
+                    console.log('values.check_in_time', values.check_in_time)
+                    values.project = ($('#project').select2('data')[0] || {}).id || '';
+                }
+                
+                record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify({id, values})});
+                
+                // Check if the acknowledge-checkbox is checked
+                if (!id){
+                    if (!$('#acknowledge-checkbox').is(":checked")) {
+                        ns_dialog.alert({message: 'Please acknowledge the SSSP, daily hazards and controls before submitting.'});
+                        return; // Prevent further execution
+                    }
+                }
+
+                let isSuccess = updateDailyHazards()
+
+                if (isSuccess){
+                    setTimeout(() => {
+                        document.main_form.submit();
+                    }, 1000);
+                }
+
+            });
+        });
+        setButtonTime('czo-check-in-time');
+        setInterval(() => {
+            setButtonTime('czo-check-in-time');
+        }, 60000);
+
+        function updateDailyHazards() {
+
+            // Get the value of the 'dailyHazards' input field
+            let dailyHazards = document.getElementById('daily_hazards').value;
+            let projectId = document.getElementById('storeProjectID').value;
+            
+            // If 'dailyHazards' is found
+            if (dailyHazards) {
+                console.log('Project ID:', projectId);
+                console.log('dailyHazards', dailyHazards)
+                
+                // Redirect the user to another Suitelet page with projectId and projectPercent as parameters
+                let redirectURL = 'https://8572983.app.netsuite.com//app/site/hosting/scriptlet.nl?script=1814&deploy=1&projectId=' + projectId + '&dailyHazards=' + dailyHazards;
+                window.location.href = redirectURL;
+                return true;
+            } else {
+                console.log('Daily Hazards Not Found.');
+                alert('Please Fill in the Daily Hazards.');
+                return null;
+            }
+        }
+
+    });
+
+</script>

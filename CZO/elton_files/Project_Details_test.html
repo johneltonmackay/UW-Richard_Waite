@@ -1,0 +1,769 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{libPath}}/css/select2.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{libPath}}/css/icheck-bootstrap.min.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/adminlte.css">
+<link rel="stylesheet" href="{{libPath}}/css/style.css">
+<!-- Add Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Add Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-nblue">
+        <a class="navbar-brand" href="/app/site/hosting/scriptlet.nl?script=1779&deploy=1">
+            <img src="https://8572983.app.netsuite.com/core/media/media.nl?id=7334&c=8572983&h=E6mbZ7NR5B1Y2FfTsmSjoPweQeSuTjdWSxqIvbFcUwA2wPmS" width="" height="60" alt="">
+        </a>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#0">Hello {name}
+                    <div class="user-panel image">
+                        <img src="{profile_image}" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                    <a href="https://8572983.app.netsuite.com/pages/nllogoutnoback.jsp" class="dropdown-item dropdown-footer">Sign Out</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!--5s Audit Form Start-->
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10 ">
+                <h4 class="section-title">Project Details</h4>
+                <h5 class="czo-sub-section-title" id="project_name"></h5>
+            </div>
+        </div>
+        <!-- Main content -->
+        <section class="content" style="padding-top: 0px">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10 pl-4">
+                    <!-- project details -->
+                    <div class="form-group clearfix czo-form-group" id="project_details">
+                        <h3 class="card-title czo-detail-section-title">Project Details</h3>
+                    </div>
+                    <!-- project details -->
+                    <!-- details -->
+                    <div class="form-group clearfix czo-form-group" id="details">
+                        <h3 class="card-title czo-detail-section-title">Details (National Group)</h3>
+                    </div>
+                    <!-- details -->
+                    <!-- scope of work -->
+                    <div class="form-group clearfix czo-form-group" id="scope_of_work">
+                        <h3 class="card-title czo-detail-section-title">Scope of Work</h3>
+                    </div>
+                    <!-- scope of work -->
+                    <!-- contact details -->
+                    <div class="form-group clearfix czo-form-group" style="margin-right: 5px" id="contact_details">
+                        <h3 class="card-title czo-detail-section-title">Contact Details</h3>
+                        <div class="row">
+                            <div class="col-3">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-3">
+                                <label>Job Title</label>
+                            </div>
+                            <div class="col-3">
+                                <label>Phone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact details -->
+                    <!-- sub-projects -->
+                 <!--   <div class="form-group clearfix czo-form-group" style="margin-right: 5px" id="sub_projects">
+                        <h3 class="card-title czo-detail-section-title">Sub-Projects</h3>
+                    </div> -->
+                    <!-- sub-projects -->
+                    <!-- cost centres -->
+                    <div class="form-group clearfix czo-form-group" style="margin-right: 5px" id="cost_centres">
+                        <h3 class="card-title czo-detail-section-title">Cost Centres</h3>
+                        <div class="row">
+                            <div class="col-4">
+                                <label>Description</label>
+                            </div>
+                            <div class="col-4" align="right">
+                                <label>Budget Hours</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cost centres -->
+                    <!-- specifications -->
+                    <div class="form-group clearfix czo-form-group" style="margin-right: 5px" id="specifications">
+                        <h3 class="card-title czo-detail-section-title">Specifications</h3>
+                        <div class="row">
+                            <div class="col">
+                                <label>Area</label>
+                            </div>
+                            <div class="col">
+                                <label>Color </label>
+                            </div>
+                            <div class="col">
+                                <label>Gloss</label>
+                            </div>
+                            <div class="col">
+                                <label>Product</label>
+                            </div>
+                            <div class="col">
+                                <label>Supplier</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- specifications -->
+                    <!-- qualityform -->
+                    <div class="form-group clearfix czo-form-group" style="margin-right: 5px" id="qualityform">
+                        <h3 class="card-title czo-detail-section-title">Quality Form</h3>
+                        <div class="row">
+                            <div class="col" style="display: none;">
+                                <label>Internal Id</label>
+                            </div>
+                            <div class="col">
+                                <label>Name</label>
+                            </div>
+                            <div class="col">
+                                <label>URL </label>
+                            </div>
+                            <div class="col">
+                                <label>Assigned</label>
+                            </div>
+                            <div class="col">
+                                <label>Attachment</label>
+                            </div>
+                            <div class="col">
+                                <label>Action</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- qualityform -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ./5S audit form ends-->
+    <footer class="main-footer">
+        Copyright &copy; 2023 National Group LTD. All rights reserved.
+    </footer>
+</div>
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="confirmationModalLabel">Confirmation</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Are you sure you want to add an attachment? Note: Adding a new attachment will override the current one.</h2>
+                <iframe id="suiteletFrame" width="100%" height="150px" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="confirmButton" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ./wrapper -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="{{libPath}}/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/popper.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/select2.full.min.js"></script>
+<!--<script src="{{libPath}}/js/select2.full.min.js"></script>-->
+<script type="application/javascript">
+    (() => {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+        $('.btn-tab-prev').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().prev().find('a').attr('id')).tab('show')
+        })
+        $('.btn-tab-next').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().next().find('a').attr('id')).tab('show')
+        })
+    })();
+    let data = '{data}';
+    let arrSpecification;
+    <!--Show/hide Textarea on selection of radio button with value "Yes"-->
+    $(document).ready(() => {
+        require(['N/record', 'N/search'], (record, search) => {
+            let arrSpecification = searchSpecification(); 
+            console.log('ELTON arrSpecification', arrSpecification);
+            let arrQualityForm = searchQAForms(); 
+            console.log('ELTON arrQualityForm', arrQualityForm);
+        });
+
+        $('.uir-page-title').closest('tr').hide();
+        let {
+            name, customerText, address, city, salesmanText, projectManagerText, foremanText, statusText,
+            jobDocsURL, scopeOfWorks, projectPercentage, exclusions, method, deliverables
+        } = data.projectDetails;
+        $('#project_name').text(name.substring(name.lastIndexOf(": ") + 1));
+        $('#project_details').append(`
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Company</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="company">${customerText || ''}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Address</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="address">${address || ''}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>City</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="city">${city || ''}</span>
+                    </div>
+                </div>
+            </div>
+        `);
+        $('#details').append(`
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Sales Man</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="salesman">${salesmanText || ''}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Project Manager</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="project_manager">${projectManagerText || ''}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Foreman</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="foreman">${foremanText || ''}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Status</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <span id="status">${statusText || ''}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>Job Docs</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <a href="${jobDocsURL || ''}">Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <div>
+                        <label>% Complete (Project Hub)</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <input type="text" id="projectPercent" value="${projectPercentage || ''}" oninput="validateInput(this.value)" style="background-color: #f5f5f5" readonly>&nbsp;&nbsp;
+                        <label id="editLbl" onclick="enableInput()" style="color: #007bff; text-decoration: underline; cursor: pointer;">Edit</label>
+                        <label id="saveLbl" onclick="getProjectId()" style="color: #007bff; text-decoration: underline; cursor: pointer; display:none;">Save</label>
+                        <input type="text" id="oldProjectPercent" value="${projectPercentage || ''}" style="display:none;">
+                    </div>
+                </div>
+            </div>
+        `);
+        $('#scope_of_work').append(`
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label><b><u>Scope</u></b></label>
+                    </div>
+                    <div>
+                        <span role="textbox" id="scope" style="color: #727272 !important; background-color: white; word-break: break-all; !important" disabled>${(scopeOfWorks || '').replace(/\n/g, '<br>')}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <br>
+                        <label><b><u>Exclusions</u></b></label>
+                    </div>
+                    <div>
+                        <span role="textbox" id="exclusions" style="color: #727272 !important; background-color: white word-break: break-all; !important" disabled>${(exclusions || '').replace(/\n/g, '<br>')}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <br>
+                        <label><b><u>Method</u></b></label>
+                    </div>
+                    <div>
+                        <span role="textbox" id="method" style="color: #727272 !important; background-color: white word-break: break-all; !important" disabled>${(method || '').replace(/\n/g, '<br>')}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <br>
+                        <label><b><u>Key Deliverables</u></b></label>
+                    </div>
+                    <div>
+                        <span role="textbox" id="deliverables" style="color: #727272 !important; background-color: white word-break: break-all; !important" disabled>${(deliverables || '').replace(/\n/g, '<br>')}</span>
+                    </div>
+                </div>
+            </div>
+        `);
+        data.contacts.forEach((contact, i) => {
+            let {name, jobtitle, email, phone} = contact;
+            let oddRowCls = i % 2 == 0 ? ' czo-odd-row' : '';
+            $('#contact_details').append(`
+                <div class="row czo-contact-detail${oddRowCls}">
+                    <div class="col-3 czo-ellipsis">
+                        <span>${name}</span>
+                    </div>
+                    <div class="col-3 czo-ellipsis">
+                        <span>${jobtitle}</span>
+                    </div>
+                    <div class="col-3 czo-ellipsis">
+                        <a href="tel:${phone}"><span>${phone}</span></a>
+                    </div>
+                </div>
+			`);
+        });
+        data.subProjects.forEach((subProject, i) => {
+            let {name, altName} = subProject;
+            let oddRowCls = i % 2 == 1 ? ' czo-odd-row' : '';
+            $('#sub_projects').append(`
+                <div class="row czo-sub-project${oddRowCls}">
+                    <div class="col">
+                        <span>${name} ${altName}</span>
+                    </div>
+                </div>
+			`);
+        });
+        data.costCentres.forEach((costCentre, i) => {
+            let {description, budgetHours} = costCentre;
+            let oddRowCls = i % 2 == 0 ? ' czo-odd-row' : '';
+            $('#cost_centres').append(`
+                <div class="row czo-cost-centre${oddRowCls}">
+                    <div class="col-4 czo-ellipsis">
+                        <span>${description}</span>
+                    </div>
+                    <div class="col-4" align="right">
+                        <span>${budgetHours}</span>
+                    </div>
+                </div>
+			`);
+        });
+
+        function resizeTextArea(elementId) {
+            const textarea = document.getElementById(elementId);
+            const { style, value } = textarea;
+
+            // The 4 corresponds to the 2 2px borders (top and bottom):
+            style.height = style.minHeight = 'auto';
+            style.minHeight = `${ Math.min(textarea.scrollHeight + 4, parseInt(textarea.style.maxHeight)) }px`;
+            style.height = `${ textarea.scrollHeight + 4 }px`;
+        }
+
+        setTimeout(() => {
+            ['scope', 'exclusions', 'method', 'deliverables'].forEach((id) => {
+                resizeTextArea(id);
+            })
+        }, 1);
+    });
+
+    function getProjectId() {
+        var confirmation = confirm("Are you sure you want to save this field?");
+        if (!confirmation) {
+            return; // Do nothing if user cancels
+        }
+        // Get the URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        
+        // Get the value of the 'projectId' parameter
+        var projectId = urlParams.get('projectId');
+        
+        // Get the value of the 'projectPercent' input field
+        var projectPercent = document.getElementById('projectPercent').value;
+        
+        // If 'projectId' parameter is found in the URL
+        if (projectId) {
+            console.log('Project ID:', projectId);
+            console.log('Project Percent:', projectPercent);
+            
+            // Redirect the user to another Suitelet page with projectId and projectPercent as parameters
+            var redirectURL = 'https://8572983.app.netsuite.com//app/site/hosting/scriptlet.nl?script=1814&deploy=1&projectId=' + projectId + '&projectPercent=' + projectPercent;
+            window.location.href = redirectURL;
+        } else {
+            console.log('Project ID not found in URL.');
+            return null;
+        }
+    }
+
+    function uploadAttachment(qualityFormId) {
+        // Get the URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        
+        // Get the value of the 'projectId' parameter
+        var projectId = urlParams.get('projectId');
+        
+        // If 'projectId' parameter is found in the URL
+        if (projectId && qualityFormId) {
+            console.log('Project ID:', projectId);
+            console.log('qualityFormId:', qualityFormId);
+                     
+            // Construct the Suitelet URL with parameters
+            var suiteletURL = 'https://8572983.app.netsuite.com/app/site/hosting/scriptlet.nl?script=1821&deploy=1&projectId=' + projectId + '&qualityFormId=' + qualityFormId;
+            
+            // Open Bootstrap modal for confirmation
+            $('#confirmationModal').modal('show');
+            // Set the src attribute of the iframe to the constructed URL
+            document.getElementById('suiteletFrame').src = suiteletURL;
+
+            // Handle user confirmation inside the modal
+            $('#confirmButton').click(function() {
+                // Accessing the iframe
+                var iframe = document.getElementById('suiteletFrame');
+                var iframeDocument = iframe.contentWindow.document;
+
+                // Triggering the click event of the submit button inside the iframe
+                var submitButton = iframeDocument.getElementById('submitter');
+                console.log('submitButton', submitButton)
+                submitButton.click();
+                $('#confirmationModal').modal('hide');
+
+                setTimeout(() => {
+                    alert('File upload is complete. Thanks!')
+                    var redirectURL = 'https://8572983.app.netsuite.com//app/site/hosting/scriptlet.nl?script=1776&deploy=1&projectId=' + projectId;
+                    window.location.replace(redirectURL);
+                }, 3000);
+                
+            });
+
+        } else {
+            console.log('Project ID or Quality Form ID not found in URL or table.');
+            return null;
+        }
+    }
+
+
+
+
+
+    function validateInput(input) {
+        var oldProjectPercent = document.getElementById('oldProjectPercent').value;
+        console.log('validateInput oldProjectPercent', oldProjectPercent)
+
+        // Check if input is empty or null
+        if (input === "" || input === null) {
+            // Handle empty or null input here (if needed)
+            // For now, let's just return without performing any validation
+            return;
+        }
+
+        var value = input;
+
+        // Check if the value contains any non-numeric characters
+        if (!/^\d+$/.test(value)) {
+            alert("Please enter a valid number.");
+            document.getElementById('projectPercent').value = oldProjectPercent;
+            return;
+        }
+
+        // Convert the input to a number
+        value = parseInt(value, 10);
+
+        // Check if the number is within the desired range
+        if (value < 1  || value > 100) {
+            alert("Please enter a number between 0 and 100.");
+            document.getElementById('projectPercent').value = oldProjectPercent;
+            return;
+        }
+    }
+
+    function enableInput() {
+    // Ask for confirmation before enabling input
+    var confirmation = confirm("Are you sure you want to edit this field?");
+    if (!confirmation) {
+        return; // Do nothing if user cancels
+    }
+
+    var inputField = document.getElementById("projectPercent");
+    inputField.removeAttribute("readonly");
+    inputField.style.background = "none"; 
+
+    var saveLbl = document.getElementById("saveLbl");
+    saveLbl.style.display = "inline";
+
+    var editLbl = document.getElementById("editLbl");
+    editLbl.style.display = "none";
+    }
+
+    function searchQAForms() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var projectId = urlParams.get('projectId');
+        let arrQualityForm = [];
+        require(['N/record', 'N/search'], (record, search) => {
+            try {
+                let objQAFormsSearch = search.create({
+                    type: 'customrecord_nat_qua_ctrl_sys',
+                    filters: [],
+                    columns: [
+                    search.createColumn({ name: 'internalid' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_proj' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_formname' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_form_url' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_assigned' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_notes' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_status' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_attach' }),
+                    search.createColumn({ name: 'custrecord_nat_qua_ctrl_sys_user' }),
+                    search.createColumn({ name: 'custrecord_file_url' }),
+
+
+                    ]
+                });
+                
+                var searchResultCount = objQAFormsSearch.runPaged().count;
+                if (searchResultCount != 0) {
+                    var pagedData = objQAFormsSearch.runPaged({pageSize: 1000});
+                    for (var i = 0; i < pagedData.pageRanges.length; i++) {
+                        var currentPage = pagedData.fetch(i);
+                        var pageData = currentPage.data;
+                        if (pageData.length > 0) {
+                            for (var pageResultIndex = 0; pageResultIndex < pageData.length; pageResultIndex++) {
+                                let intProjectId = pageData[pageResultIndex].getValue({name: 'custrecord_nat_qua_ctrl_sys_proj'})
+
+                                if (intProjectId == projectId){
+                                    arrQualityForm.push({
+                                        internalid: pageData[pageResultIndex].getValue({name: 'internalid'}),
+                                        projectid: pageData[pageResultIndex].getValue({name: 'custrecord_nat_qua_ctrl_sys_proj'}),
+                                        formname: pageData[pageResultIndex].getValue({name: 'custrecord_nat_qua_ctrl_sys_formname'}),
+                                        formurl: pageData[pageResultIndex].getValue({name: 'custrecord_nat_qua_ctrl_sys_form_url'}),
+                                        assigned: pageData[pageResultIndex].getValue({name: 'custrecord_nat_qua_ctrl_sys_assigned'}),
+                                        notes: pageData[pageResultIndex].getValue({name: 'custrecord_nat_qua_ctrl_sys_notes'}),
+                                        status: pageData[pageResultIndex].getText({name: 'custrecord_nat_qua_ctrl_sys_status'}),
+                                        attachment: pageData[pageResultIndex].getText({name: 'custrecord_nat_qua_ctrl_sys_attach'}),
+                                        user: pageData[pageResultIndex].getText({name: 'custrecord_nat_qua_ctrl_sys_user'}),
+                                        url: pageData[pageResultIndex].getValue({name: 'custrecord_file_url'}),
+                                        
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log('Error: ', e.message)
+            }           
+      
+
+        arrQualityForm.forEach((qualityform, i) => {
+            let {internalid, projectid, formname, formurl, assigned, notes, status, attachment, user, url} = qualityform;
+            let oddRowCls = i % 2 == 1 ? ' czo-odd-row' : '';
+            $('#qualityform').append(`
+                <div class="row czo-specification${oddRowCls}">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col" style="display:none;">
+                                <input type="text" id="qualityformid" value="${internalid || ''}">
+                            </div>
+                            <div class="col">
+                                <span>${formname || ''}</span>
+                            </div>
+                            <div class="col">
+                                <span><a href="${formurl || '#'}" target="_blank">${formurl ? 'View' : 'No Url'}</a></span>
+                            </div>
+                            <div class="col">
+                                <span>${assigned || ''}</span>
+                            </div>
+                            <div class="col">
+                                <a href="https://8572983.app.netsuite.com/${url || '#'}" target="_blank">
+                                    <span>${url ? 'View' : 'No File'}</span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <label id="uploadLbl" onclick="uploadAttachment(${internalid || ''})" style="color: #007bff; text-decoration: underline; cursor: pointer;">Attach</label>
+                            </div>       
+                        </div>
+                    </div>
+                </div>
+			`);
+        });
+
+    });
+    return arrQualityForm
+    }
+
+    function searchSpecification() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var projectId = urlParams.get('projectId');
+        let arrSpecification = [];
+        require(['N/record', 'N/search'], (record, search) => {
+            try {
+                let objSpecificationSearch = search.create({
+                    type: 'customrecord1361',
+                    filters: [],
+                    columns: [
+                    search.createColumn({ name: 'custrecord_czo_s_area' }),
+                    search.createColumn({ name: 'custrecord_czo_s_color' }),
+                    search.createColumn({ name: 'custrecord_czo_s_project' }),
+                    search.createColumn({ name: 'custrecord_czo_s_gloss' }),
+                    search.createColumn({ name: 'created' }),
+                    search.createColumn({ name: 'custrecord_czo_s_product' }),
+                    search.createColumn({ name: 'custrecord_czo_s_supplier' }),
+                    search.createColumn({ name: 'custrecord_czo_s_created_by' }),
+                    search.createColumn({ name: 'custrecord_czo_s_order' }),
+                    search.createColumn({ name: 'custrecord_jdk_s_customer' }),
+                    search.createColumn({ name: 'custrecord_project_foreman_category' }),
+                    ]
+                });
+                
+                var searchResultCount = objSpecificationSearch.runPaged().count;
+                if (searchResultCount != 0) {
+                    var pagedData = objSpecificationSearch.runPaged({pageSize: 1000});
+                    for (var i = 0; i < pagedData.pageRanges.length; i++) {
+                        var currentPage = pagedData.fetch(i);
+                        var pageData = currentPage.data;
+                        if (pageData.length > 0) {
+                            for (var pageResultIndex = 0; pageResultIndex < pageData.length; pageResultIndex++) {
+                                let intProjectId = pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_project'})
+
+                                if (intProjectId == projectId){
+                                    arrSpecification.push({
+                                    area: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_area'}),
+                                    color: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_color'}),
+                                    project: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_project'}),
+                                    gloss: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_gloss'}),
+                                    created: pageData[pageResultIndex].getValue({name: 'created'}),
+                                    product: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_product'}),
+                                    supplier: pageData[pageResultIndex].getText({name: 'custrecord_czo_s_supplier'}),
+                                    createdby: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_created_by'}),
+                                    order: pageData[pageResultIndex].getValue({name: 'custrecord_czo_s_order'}),
+                                    customer: pageData[pageResultIndex].getValue({name: 'custrecord_jdk_s_customer'}),
+                                    category: pageData[pageResultIndex].getValue({name: 'custrecord_project_foreman_category'}),
+                                });
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log('Error: ', e.message)
+            }           
+      
+
+        arrSpecification.forEach((specification, i) => {
+            let {area, color, gloss, product, supplier} = specification;
+            let oddRowCls = i % 2 == 1 ? ' czo-odd-row' : '';
+            $('#specifications').append(`
+                <div class="row czo-specification${oddRowCls}">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <span style="word-break: break-all;">${area || ''}</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <span style="word-break: break-all;">${color || ''}</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <span style="word-break: break-all;">${gloss || ''}</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <span style="word-break: break-all;">${product || ''}</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <span style="word-break: break-all;">${supplier || ''}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			`);
+        });
+
+    });
+    return arrSpecification
+    }
+
+</script>

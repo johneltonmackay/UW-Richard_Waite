@@ -1,0 +1,157 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{libPath}}/css/select2.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{libPath}}/css/icheck-bootstrap.min.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/adminlte.css">
+<link rel="stylesheet" href="{{libPath}}/css/style.css">
+
+<div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-nblue" style="display: flex; justify-content: space-between; align-items: left;">
+        <!-- 1st div -->
+        <div>
+            <a class="navbar-brand" href="/app/site/hosting/scriptlet.nl?script=1779&deploy=1">
+                <img src="https://8572983.app.netsuite.com/core/media/media.nl?id=7334&c=8572983&h=E6mbZ7NR5B1Y2FfTsmSjoPweQeSuTjdWSxqIvbFcUwA2wPmS" width="" height="60" alt="">
+            </a>
+        </div>
+    
+        <!-- 2nd div -->
+        <div style="display: flex; align-items: left;">
+            <ul class="navbar-nav ml-auto" style="display: flex; align-items: left; margin: 0;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#0" style="display: flex; align-items: left;">
+                        <span style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; margin-right: 10px;">Hello {name}</span>
+                        <div class="user-panel image">
+                            <img src="{profile_image}" class="img-circle elevation-2" alt="User Image" style="width: 40px; height: 40px; border-radius: 50%;">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                        <a href="https://8572983.app.netsuite.com/pages/nllogoutnoback.jsp" class="dropdown-item dropdown-footer">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--5s Audit Form Start-->
+    <div class="container">
+        <!-- Main content -->
+        <section class="content" style="min-height: 700px">
+            <div class="row justify-content-between">
+                <div class="col" align="center">
+                    <div class="info-box czo-info-box" style="min-width: 125px; max-width: 350px" id="daily">
+                        <div style="margin: auto">
+                            <img src="{{libPath}}/images/5x5.png" style="height: 100px; width: 100px; margin: auto"></img>
+                            <span class="info-box-text czo-tile-title">Daily 5x5 Form</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" align="center">
+                    <div class="info-box czo-info-box" style="min-width: 125px; max-width: 350px"  id="before_after">
+                        <div style="margin: auto">
+                            <img src="{{libPath}}/images/before_after.png" style="height: 100px; width: 100px; margin: auto"></img>
+                            <span class="info-box-text czo-tile-title">Before & After Form</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col" align="center">
+                    <div class="info-box czo-info-box" style="min-width: 125px; max-width: 350px" id="projects">
+                        <div style="margin: auto">
+                            <img src="{{libPath}}/images/projects.png" style="height: 100px; width: 100px; margin: auto"></img>
+                            <span class="info-box-text czo-tile-title">My Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" align="center">
+                    <div class="info-box czo-info-box" style="min-width: 125px; max-width: 350px" id="timesheet">
+                        <div style="margin: auto">
+                            <img src="{{libPath}}/images/timesheet.png" style="height: 100px; width: 100px; margin: auto"></img>
+                            <span class="info-box-text czo-tile-title">Sign In</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ./5S audit form ends-->
+    <footer class="main-footer">
+        Copyright &copy; 2023 National Group LTD. All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="{{libPath}}/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/popper.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/select2.full.min.js"></script>
+<!--<script src="{{libPath}}/js/select2.full.min.js"></script>-->
+<script type="application/javascript">
+    (() => {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+        $('.btn-tab-prev').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().prev().find('a').attr('id')).tab('show')
+        })
+        $('.btn-tab-next').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().next().find('a').attr('id')).tab('show')
+        })
+    })();
+    let data = '{data}';
+    $(document).ready(() => {
+        require(['N/currentRecord', 'N/search', 'N/runtime'], (ns_currentRecord, ns_search, ns_runtime) => {
+            let objUser = ns_runtime.getCurrentUser();
+            let scriptObj = ns_runtime.getCurrentScript();
+            let vendorParam = scriptObj.getParameter({name: 'custscript_param_vendor_search'});
+            console.log("vendorParam",vendorParam)
+            try {
+                fieldLookUp = ns_search.lookupFields({
+                    type: ns_search.Type.VENDOR,
+                    id: objUser.id, // for TESTING 13297
+                    columns: ['category']
+                });
+                console.log("fieldLookUp",fieldLookUp)
+                if (fieldLookUp.category[0]){
+                    strCategoy = fieldLookUp.category[0].value;
+                    console.log("fieldLookUp strCategoy",strCategoy)
+                    if (strCategoy != 6){
+                        // hide timesheet
+                        var timesheetBox = document.getElementById("timesheet");
+                        if (timesheetBox) {
+                            timesheetBox.style.display = "none";
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log('Error: ', e.message)
+            }           
+            console.log('TEST user', objUser)
+
+        });
+        $('.uir-page-title').closest('tr').hide();
+        let idScriptIdMap = {daily: '1763', before_after: '1765', projects: '1776', timesheet: '1772'};
+        Object.keys(idScriptIdMap).forEach((id) => {
+            $('#' + id).on('click', (e) => {
+                window.location.href = `/app/site/hosting/scriptlet.nl?script=${idScriptIdMap[id]}&deploy=1`;
+            });
+        });
+    });
+</script>

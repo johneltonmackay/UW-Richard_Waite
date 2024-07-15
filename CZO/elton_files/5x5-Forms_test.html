@@ -1,0 +1,969 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/bootstrap.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="{{libPath}}/css/select2.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{libPath}}/css/icheck-bootstrap.min.css">
+
+<link rel="stylesheet" href="{{libPath}}/css/adminlte.css">
+<link rel="stylesheet" href="{{libPath}}/css/style.css">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-nblue" style="display: flex; justify-content: space-between; align-items: left;">
+        <!-- 1st div -->
+        <div>
+            <a class="navbar-brand" href="/app/site/hosting/scriptlet.nl?script=1779&deploy=1">
+                <img src="https://8572983.app.netsuite.com/core/media/media.nl?id=7334&c=8572983&h=E6mbZ7NR5B1Y2FfTsmSjoPweQeSuTjdWSxqIvbFcUwA2wPmS" width="" height="60" alt="">
+            </a>
+        </div>
+    
+        <!-- 2nd div -->
+        <div style="display: flex; align-items: left;">
+            <ul class="navbar-nav ml-auto" style="display: flex; align-items: left; margin: 0;">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#0" style="display: flex; align-items: left;">
+                        <span style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; margin-right: 10px;">Hello {name}</span>
+                        <div class="user-panel image">
+                            <img src="{profile_image}" class="img-circle elevation-2" alt="User Image" style="width: 40px; height: 40px; border-radius: 50%;">
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                        <a href="https://8572983.app.netsuite.com/pages/nllogoutnoback.jsp" class="dropdown-item dropdown-footer">Sign Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /.navbar -->
+
+    <!--5s Audit Form Start-->
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-10 ">
+                <h4 class="section-title">Daily Forms - 5x5 Safety Assessment</h4>
+            </div>
+        </div>
+        <!-- Main content -->
+        <section class="content">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <select class="form-control select2" data-placeholder="Select Project" id="project" style="width: 100%;">
+                            <option>Select Project</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-10 pl-4 pr-4">
+                    <div class="form-group">
+                        <label for="comments" class="mb-1"><h3 class="card-title mb-1">Site Description</h3></label>
+                        <textarea class="form-control" rows="2" id="site_description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!--Hazards section starts-->
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10">
+                    <h5 class="form-title">Health & Safety</h5>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Working at Heights (over 4m)</h3>
+                        <div class="row">
+                            <input type="radio" id="working_at_heights" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary11" name="working_at_heights" value="1">
+                                    <label for="radioPrimary11">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary12" name="working_at_heights" value="2">
+                                    <label for="radioPrimary12">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary13" name="working_at_heights" value="3">
+                                    <label for="radioPrimary13">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-10 pr-4" name="working_at_heights_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="working_at_heights_notes"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Scaffolding</h3>
+                        <div class="row">
+                            <input type="radio" id="scaffolding" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary21" name="scaffolding" value="1">
+                                    <label for="radioPrimary21">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary22" name="scaffolding" value="2">
+                                    <label for="radioPrimary22">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary23" name="scaffolding" value="3">
+                                    <label for="radioPrimary23">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="scaffolding_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="scaffolding_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Roof Work</h3>
+                        <div class="row">
+                            <input type="radio" id="roof_work" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary31" name="roof_work" value="1">
+                                    <label for="radioPrimary31">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary32" name="roof_work" value="2">
+                                    <label for="radioPrimary32">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary33" name="roof_work" value="3">
+                                    <label for="radioPrimary33">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="roof_work_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="roof_work_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Elevated Work Platforms</h3>
+                        <div class="row">
+                            <input type="radio" id="elevated_platforms" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary41" name="elevated_platforms" value="1">
+                                    <label for="radioPrimary41">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary42" name="elevated_platforms" value="2">
+                                    <label for="radioPrimary42">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary43" name="elevated_platforms" value="3">
+                                    <label for="radioPrimary43">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="elevated_platforms_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="elevated_platforms_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Power Lines</h3>
+                        <div class="row">
+                            <input type="radio" id="power_lines" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary51" name="power_lines" value="1">
+                                    <label for="radioPrimary51">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary52" name="power_lines" value="2">
+                                    <label for="radioPrimary52">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary53" name="power_lines" value="3">
+                                    <label for="radioPrimary53">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="power_lines_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="power_lines_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--Hazards section ends-->
+            <!--General section Start-->
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10">
+                    <h5 class="form-title">General Items</h5>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Public access/Protection</h3>
+                        <div class="row">
+                            <input type="radio" id="public_access" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary91" name="public_access" value="1">
+                                    <label for="radioPrimary91">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary92" name="public_access" value="2">
+                                    <label for="radioPrimary92">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary93" name="public_access" value="3">
+                                    <label for="radioPrimary93">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="public_access_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="public_access_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Signage/Barriers</h3>
+                        <div class="row">
+                            <input type="radio" id="signage" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary71" name="signage" value="1">
+                                    <label for="radioPrimary71">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary72" name="signage" value="2">
+                                    <label for="radioPrimary72">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary73" name="signage" value="3">
+                                    <label for="radioPrimary73">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="signage_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="signage_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">House keeping - Tidy site</h3>
+                        <div class="row">
+                            <input type="radio" id="house_keeping" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary81" name="house_keeping" value="1">
+                                    <label for="radioPrimary81">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary82" name="house_keeping" value="2">
+                                    <label for="radioPrimary82">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary83" name="house_keeping" value="3">
+                                    <label for="radioPrimary83">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="house_keeping_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="house_keeping_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4">
+                    <!-- radio -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Traffic</h3>
+                        <div class="row">
+                            <input type="radio" id="traffic" value="" hidden>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary111" name="traffic" value="1">
+                                    <label for="radioPrimary111">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary112" name="traffic" value="2">
+                                    <label for="radioPrimary112">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="icheck-primary d-inline">
+                                    <input type="radio" id="radioPrimary113" name="traffic" value="3">
+                                    <label for="radioPrimary113">
+                                        N/A
+                                    </label>
+                                </div>
+                            </div>
+                            <!--Textarea hidden-->
+                            <div class="col-md-10 pr-4" name="traffic_notes" style="display:none;">
+                                <div class="form-group mt-4 mb-0">
+                                    <textarea class="form-control" rows="2" id="traffic_notes"></textarea>
+                                </div>
+                            </div>
+                            <!--Textarea-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--notes section-->
+                <div class="col-md-10 pl-4 pr-4">
+                    <div class="form-group">
+                        <label for="comments" class="mb-1"><h3 class="card-title mb-1">Plan for today/Comments</h3></label>
+                        <small class="form-text text-muted mt-0 mb-2" style="font-size: 12px">Note - any changes to the SSSP</small>
+                        <textarea class="form-control" id="comments" rows="3" required></textarea>
+                    </div>
+                </div>
+                <!-- Comment section ends-->
+            </div>
+            <!--General section ends-->
+
+            <!--Photos section Start-->
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10">
+                    <h5 class="form-title">Photos</h5>
+                </div>
+                <div class="col-md-10 pl-4 pr-4" id="updated_signboard_photos">
+                    <!-- Photo 1 -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Take One Photo of updated signboard</h3>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file text-center">
+                                            <input type="file" class="custom-file-input" name="updated_signboard_photo" id="updated_signboard_photo">
+                                            <label class="custom-file-label" for="updated_signboard_photo">
+                                                Click to add a photo<i class="fas fa-upload"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box" id="updated_signboard_photo_info">
+                            <span class="info-box-icon">
+                                <img id="updated_signboard_photo_img" src="" class="align-self-start" alt="...">
+                            </span>
+
+                            <div class="info-box-content">
+                                <span class="info-box-text"></span>
+                                <span class="info-box-number"></span>
+                            </div>
+                            <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4 pr-4" id="general_photos">
+                    <!-- Photo 1 -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title">Take Six General Photos</h3>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="general_photo1" id="general_photo1" data-id="1">
+                                                <label class="custom-file-label" for="general_photo1">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="general_photo1_info">
+								<span class="info-box-icon">
+									<img id="general_photo1_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="general_photo2" id="general_photo2" data-id="2">
+                                                <label class="custom-file-label" for="general_photo2">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box"  id="general_photo2_info">
+								<span class="info-box-icon">
+									<img id="general_photo2_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="general_photo3" id="general_photo3" data-id="3">
+                                                <label class="custom-file-label" for="general_photo3">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="general_photo3_info">
+								<span class="info-box-icon">
+									<img id="general_photo3_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="general_photo4" id="general_photo4" data-id="4">
+                                                <label class="custom-file-label" for="general_photo4">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="general_photo4_info">
+								<span class="info-box-icon">
+									<img id="general_photo4_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="general_photo5" id="general_photo5" data-id="5">
+                                                <label class="custom-file-label" for="general_photo5">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="general_photo5_info">
+								<span class="info-box-icon">
+									<img id="general_photo5_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="general_photo6" id="general_photo6" data-id="6">
+                                                <label class="custom-file-label" for="general_photo6">
+                                                    Click to add a photo<i class="fas fa-upload"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="general_photo6_info">
+								<span class="info-box-icon">
+									<img id="general_photo6_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 pl-4 pr-4" id="work_permits_photos">
+                    <!-- Photo 1 -->
+                    <div class="form-group clearfix">
+                        <h3 class="card-title mb-0">Take photos of any work permits</h3>
+                        <p id="photo-4" class="form-text text-muted mt-0 mb-0">
+                            <small class="form-text text-muted mt-1 mb-2" style="font-size: 12px">(If working under ND or Client permit to system)</small>
+                        </p>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="work_permits_photo1" id="work_permits_photo1" data-id="1">
+                                                <label class="custom-file-label" for="work_permits_photo1">
+                                                    Click to add a photo<i class="fas fa-upload"></i></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="work_permits_photo1_info">
+								<span class="info-box-icon">
+									<img id="work_permits_photo1_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file text-center">
+                                                <input type="file" class="custom-file-input" name="work_permits_photo2" id="work_permits_photo2" data-id="2">
+                                                <label class="custom-file-label" for="work_permits_photo2">
+                                                    Click to add a photo<i class="fas fa-upload"></i></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-box" id="work_permits_photo2_info">
+								<span class="info-box-icon">
+									<img id="work_permits_photo2_img" src="" class="align-self-start" alt="...">
+								</span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"></span>
+                                    <span class="info-box-number"></span>
+                                </div>
+                                <a href="#0" class="close"><span class="info-box-icon"><i class="fas fa-times"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Photo section ends-->
+            </div>
+            <!-- Button  -->
+            <div class="row justify-content-md-center">
+                <div class="col col-md-10 mr-3">
+                    <div style="padding-left: 15px">
+                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right" id="submit-btn">SUBMIT</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Button ends -->
+            <!--    </div>-->
+        </section>
+    </div>
+    <!-- ./5S audit form ends-->
+    <footer class="main-footer">
+        Copyright &copy; 2023 National Group LTD. All rights reserved.
+    </footer>
+</div>
+<!-- ./wrapper -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script type="text/javascript" src="{{libPath}}/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/popper.min.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/bootstrap.js"></script>
+<script type="text/javascript" src="{{libPath}}/js/select2.full.min.js"></script>
+<!--<script src="{{libPath}}/js/select2.full.min.js"></script>-->
+<script type="application/javascript">
+    (() => {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+        $('.btn-tab-prev').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().prev().find('a').attr('id')).tab('show')
+        })
+        $('.btn-tab-next').on('click', function (e) {
+            e.preventDefault()
+            $('#' + $('.nav-item > .active').parent().next().find('a').attr('id')).tab('show')
+        })
+    })();
+    let data = '{data}';
+    function readURL(input, id) {
+        console.log('readURL: id', id);
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#' + id).attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(document).ready(() => {
+        $('.uir-page-title').closest('tr').hide();
+        $('#custpage_czo_file').hide();
+        data.projects.forEach((project) => {
+            let {id, name} = project;
+            $('#project').append(new Option(name, id, false, false));
+        });
+        $('.info-box').hide();
+        $("input[type='radio']").change(function () {
+            let name = $(this).attr('name');
+            if (name) {
+                let value = $(this).val();
+                let selector = `[name='${name}_notes']`;
+                $(`#${name}`).val(value);
+                if (value == "1") {
+                    $(selector).show();
+                } else {
+                    $(selector).hide();
+                }
+            }
+        });
+        $('input:file').change(function () {
+            let id = $(this).attr('id');
+            console.log('id: ', id);
+            let imgId = id + '_img';
+            let fileInput = $(this)[0];
+            let file = fileInput.files[0];
+            let originalFileName = (fileInput.value || '').replace("C:\\fakepath\\", '');
+            let fileSize = (file.size / 1000).toFixed(2) + ' KB';
+            let name = ($(this).attr('name') || '').replace(/[0-9]/g, '');
+            let dataId = $(this).attr('data-id');
+
+            // Function to generate UUID
+            function generateUUID() {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    let r = (Math.random() * 16) | 0,
+                        v = c === 'x' ? r : (r & 0x3) | 0x8;
+                    return v.toString(16);
+                });
+            }
+
+            // Generate unique filename using UUID
+            let uniqueFileName = `${generateUUID()}_${originalFileName}`;
+
+            // Function to check if the image is landscape
+            function isLandscape(image) {
+                console.log('image.width', image.width);
+                console.log('image.height', image.height);
+                if (image.width > image.height){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // Function to display alert if the image is not landscape
+            function showAlert() {
+                alert("Please upload a landscape image.");
+            }
+
+            // Function to read URL and perform landscape validation
+            function handleFileSelect(evt) {
+                var inputElement = evt.target;
+                var files = evt.target.files;
+                var f = files[0];
+                var reader = new FileReader();
+                reader.onload = (function (theFile) {
+                    return function (e) {
+                        var img = new Image();
+                        img.src = e.target.result;
+                        img.onload = function () {
+                            if (!isLandscape(img)) {
+                                showAlert();
+                                inputElement.value = ''; // Clear the input value
+                            } else {
+                                $('#' + imgId).attr('src', e.target.result);
+
+                                $('#' + imgId).closest('.info-box').find('.info-box-text').text(uniqueFileName);
+                                $('#' + imgId).closest('.info-box').find('.info-box-number').text(fileSize);
+                                $('#' + imgId).closest('.info-box').show();
+
+                                // Now hide the row
+                                $(inputElement).closest('.row').hide();
+
+                                if (dataId) {
+                                    let nextDataId = dataId * 1 + 1;
+                                    $(`#${name}${nextDataId}`).closest('.row').show();
+                                }
+                            }
+                        };
+                    };
+                })(f);
+                reader.readAsDataURL(f);
+            }
+
+            // Call the function to handle file select
+            handleFileSelect(event);
+        });
+
+
+
+        $('.close').click(function () {
+            let id = $(this).closest('.info-box').attr('id').replace('_info', '');
+            console.log('on close file id: ', id);
+            $(this).closest('.info-box').hide();
+            $('#' + id).closest('.row').show();
+            $('#' + id).val(''); // Clear the value of the input element with the derived id
+        });
+
+
+        $('#submit-btn').click(() => {
+            require(['N/currentRecord', 'N/ui/dialog'], (ns_currentRecord, ns_dialog) => {
+                let record = ns_currentRecord.get();
+                let values = {};
+                let radioFieldIds = [];
+                let emptyRadioFieldIds = [];
+                let emptyImageFieldIds = [];
+                $("input[type='radio']").each(function () {
+                    let name = $(this).attr('name');
+                    if (name) {
+                        radioFieldIds.push(name);
+                        if (!$("input[name='" + name + "']:checked").val()) {
+                            if (!emptyRadioFieldIds.includes(name)){
+                                emptyRadioFieldIds.push(name);
+                            }
+                        }
+                    }
+                });
+                // If any radio button is not selected, show an alert and prevent form submission
+                if (emptyRadioFieldIds.length > 0) {
+                    console.log('emptyRadioFieldIds', emptyRadioFieldIds);
+                }
+
+                [...new Set(radioFieldIds)].forEach((fieldId) => {
+                    let notesFieldId = `${fieldId}_notes`;
+                    values[fieldId] = $(`#${fieldId}`).val();
+                    values[notesFieldId] = $(`#${notesFieldId}`).val();
+                });
+
+                ['project', 'comments', 'site_description'].forEach((fieldId) => {
+                    values[fieldId] = $(`#${fieldId}`).val();
+                });
+
+                values.comments = $('#comments').val();
+                values.project = ($('#project').select2('data')[0] || {}).id || '';
+                record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify(values)});
+
+                // If any field is not selected, show an alert and prevent form submission
+                [
+                    'comments', 'updated_signboard_photo', 'general_photo1', 'general_photo2', 'general_photo3',
+                    'general_photo4', 'general_photo5', 'general_photo6', 'site_description'
+                ].forEach((fieldId) => {
+                    values[fieldId] = $(`#${fieldId}`).val();
+                    console.log('img filename', values[fieldId])
+                    if (!values[fieldId]){
+                        emptyImageFieldIds.push(fieldId)
+                    }
+                });
+
+                let combinedArray = [...emptyRadioFieldIds, ...emptyImageFieldIds];
+                if (combinedArray.length > 0 ){
+                    let fieldsToSelect = combinedArray.map(fieldName => fieldName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())).join(', ');
+                    let message = `Before submitting, please ensure you've provided input for the following field: ${fieldsToSelect}.`;
+                    ns_dialog.alert({ message: message });
+                    return; // Prevent form submission
+                }
+
+                if (!values.project || values.project == 'Select Project') {
+                    ns_dialog.alert({message: 'Please select a Project before submitting.'});
+                } else {
+                    setTimeout(() => {
+                        document.main_form.submit();
+                    }, 1000);
+                }
+            
+            });
+        });
+    });
+    console.log('test elton')
+</script>
