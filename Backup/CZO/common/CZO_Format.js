@@ -37,44 +37,6 @@ define([
         stringToDateTime(dateString) {
             return ns_format.parse({value: dateString, type: ns_format.Type.DATETIME});
         },
-
-        customToDate(dateString) {
-            return ns_format.parse({value: dateString, type: ns_format.Type.DATE});
-        },
-
-        customNSFormat(dtToday){
-            return ns_format.format({value: dtToday, type: ns_format.Type.DATETIME});
-        },
-
-        customDateTime(dateString) {
-            let time24 = ""
-            let arrRawDate = dateString.split(' ');
-            let timeParts = arrRawDate[1].split(':');
-        
-            // Extract the time parts
-            let hour = parseInt(timeParts[0]);
-            let minute = parseInt(timeParts[1]);
-            let period = arrRawDate[2].toLowerCase(); // Convert the period to lowercase for easier comparison
-        
-            // Adjust hour if it's in PM
-            if (period === "pm" && hour !== 12) {
-                hour += 12;
-            }
-        
-            // Adjust hour if it's in AM and is 12 AM
-            if (period === "am" && hour === 12) {
-                hour = 0;
-            }
-        
-            // Format the hour to have leading zero if necessary
-            hour = (hour < 10 ? "0" : "") + hour;
-        
-            // Construct the new 24-hour format time string
-            time24 = hour + ":" + (minute < 10 ? "0" : "") + minute;
-        
-            return time24;
-        },
-
         dateToLocalDateString(date, timezone) {
             let strLocaleDate = ns_format.format({
                 value: date,

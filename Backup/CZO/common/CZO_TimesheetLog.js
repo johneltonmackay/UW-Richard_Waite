@@ -36,14 +36,6 @@ define([
             return this.getValue({fieldId: Field.CHECK_OUT_TIME});
         };
 
-        get Time_In() {
-            return this.getValue({fieldId: Field.TIME_IN});
-        };
-
-        get Time_Out() {
-            return this.getValue({fieldId: Field.TIME_OUT});
-        };
-
         get serviceItem() {
             return this.getValue({fieldId: Field.SERVICE_ITEM});
         };
@@ -86,18 +78,7 @@ define([
             let timesheetLog = id ? this.load({id, isDynamic: true}) : this.create({isDynamic: true});
             Object.keys(values).forEach((key) => {
                 let fieldId = [prefix, key].join('_');
-                if (
-                    fieldId == 'custrecord_tl_check_in_time' ||
-                    fieldId == 'custrecord_tl_check_out_time' ||
-                    fieldId == 'custrecord_tl_out_time' ||
-                    fieldId == 'custrecord_tl_in_time' 
-                ){
-                    timesheetLog.setText({fieldId, text: values[key] || ''});
-                }
-                else {
-                    timesheetLog.setValue({fieldId, value: values[key] || ''});
-                }
-                
+                timesheetLog.setValue({fieldId, value: values[key] || ''});
             });
 
             return timesheetLog.save({ignoreMandatoryFields: true});
@@ -106,20 +87,18 @@ define([
             let {submittedBy} = options;
             let columnMap = {
                 id: {name: Field.INTERNAL_ID},
-                projectText: {name: Field.PROJECT},
-                projectId: { name: 'internalid', join: 'custrecord_tl_project' }
+                projectText: {name: Field.PROJECT}
             };
             let search = czo_search.create({
                 type: this.type,
                 filters: [
                     [Field.IS_INACTIVE, Operator.IS, false], LogicalOperator.AND,
                     [Field.CHECK_OUT_TIME, Operator.ISEMPTY, ''], LogicalOperator.AND,
-                    ['created', 'within', 'today'], LogicalOperator.AND,
+                    [Field.DATE, Operator.ON, Value.TODAY], LogicalOperator.AND,
                     [Field.SUBMITTED_BY, Operator.IS, submittedBy]
                 ],
                 columnMap
             });
-            log.debug('search', search)
             let results = search.getJSONResults(columnMap);
 
             return results.length > 0 ? results[0] : {};

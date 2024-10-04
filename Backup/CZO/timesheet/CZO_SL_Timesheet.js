@@ -30,8 +30,6 @@ define([
     const render = (context, fileName) => {
         log.debug({title: 'render', details: {fileName}});
         let user = czo_runtime.getCurrentUser();
-        let strFirstName = user.name.split(' ').slice(0, -1).join(' '); // remove last index
-        log.debug({title: 'user', details: {user}});
         let script = czo_runtime.getCurrentScript();
         let profileImage = czo_entity.lookupImage({id: user.id});
         let form = czo_serverWidget.castForm(czo_serverWidget.createForm({title: ' ', hideNavBar: true}));
@@ -39,7 +37,7 @@ define([
         let domainUrl = context.request.url.substring(0, context.request.url.indexOf('/app'))
         let libPath = czo_runtime.getLibPath(domainUrl);
         let includeFilesUrlMap = {};
-        includeFilesUrlMap['name'] = strFirstName;
+        includeFilesUrlMap['name'] = user.name;
         includeFilesUrlMap['profile_image'] = profileImage || [libPath, 'images', FileName.GENERIC_AVATAR_IMG].join('/');
         let htmlFileId = czo_folder.getFileId({folderId: suiteAppFolderId, fileName});
         let htmlFile = czo_file.load({id: htmlFileId});
@@ -50,22 +48,15 @@ define([
                 contents = contents.replace(['{', fileName, '}'].join(''), url);
             }
         });
-        let {id, projectText, projectId} = czo_log.searchCheckedInTodayDetails({submittedBy: user.id});
-        let recordType = czo_entity.lookupRecordType({id: user.id});
+        let {id, projectText} = czo_log.searchCheckedInTodayDetails({submittedBy: user.id});
         let data = {
             libPath,
             id,
-            projectId,
             projectText,
-            projects: czo_project.searchTimeSheetSelectOptions({
-                contractor: czo_entity.isTypeEmployee(recordType) ? user.id : '',
-                userid: user.id
-            }),
-            scriptUrl: czo_url.resolveScript({scriptId: script.id, deploymentId: script.deploymentId}),
+            projects: czo_project.searchSelectOptions(),
+            scriptUrl: czo_url.resolveScript({scriptId: script.id, deploymentId: script.deploymentId})
         };
-        let logTest = czo_entity.isTypeEmployee(recordType)
-        log.debug({title: 'logTest', details: {logTest}});
-        log.debug({title: 'data Timesheet', details: data});
+        log.debug({title: 'data', details: data});
         contents = contents.replace("'{data}'", JSON.stringify(data));
         let compiledHTML = hb.compile(contents);
         let defaultValue = compiledHTML({
@@ -91,18 +82,12 @@ define([
                     let {parameters} = request;
                     let {id, values} = JSON.parse(parameters[Field.UI_INPUT_DATA] || '{}');
                     log.debug({title: 'SL_Post_Request_Par', details: values});  // MK
-                    let dtToday = new Date()
-                    let dtDate = czo_format.customNSFormat(dtToday)
                     if (!id) {
-                        log.debug({title: 'dtDate', details: dtDate});
-                        values.date = czo_format.customToDate(values.date);
-                        values.check_in_time = czo_format.customDateTime(values.check_in_time);
-                        values.in_time = dtDate;
+                        values.date = czo_format.stringToDate(values.date);
+                        values.check_in_time = czo_format.stringToDateTime(values.check_in_time);
                         values.submitted_by = czo_runtime.getUser();
                     } else {
-                        log.debug({title: 'dtDate', details: dtDate});
-                        values.check_out_time = czo_format.customDateTime(values.check_out_time);
-                        values.out_time = dtDate;
+                        values.check_out_time = czo_format.stringToDateTime(values.check_out_time);
                     }
                     log.debug({title: 'SL_upsertFromData_values', details: values});  // MK
                     let logId = czo_log.upsertFromData({id, values});

@@ -53,29 +53,40 @@
         <div class="row justify-content-md-center">
             <div class="col-10">
                 <h5 class="czo-main-section-title czo-hidden">Check <span id="czo-title-operation"></span></h5>
-            </div>
-            <div class="col-10 mx-auto d-flex flex-column align-items-center text-center">
-                <i id="success-icon" class="bi bi-check-circle-fill text-primary czo-hidden" style="font-size: 2rem;"></i>
-                <div id="success-label" class="czo-hidden">
-                    <label class="text-primary font-weight-bold" style="font-size: 1.5rem;">Check In Success!</label>
-                </div>
-            </div>                        
-            <div class="col col-md-10 czo-check-out czo-hidden text-center">
-                <label class="czo-section-title">Your are checked in to</label>
-                <h5 class="czo-section-title" id="czo-project-name">PRO1 Test Project</h5>
-            </div>
+            </div>                      
+            <div class="col col-md-10 czo-check-out czo-hidden text-center" style="background-color: #E5E5E5;">
+                <br>
+                <center>
+                    <div style="border: 1px solid whitesmoke; border-radius: 10px; background-color: white; width: 95%;">
+                        <label class="czo-section-title" style="margin-top: 30px;">You are logged in to</label>
+                        <h5 class="czo-section-title" id="czo-project-name" style="margin-top: 5px; color: #2D2F74;">PRO1 Test Project</h5>
+                        <button type="button" id="submit-btn-custom" style="padding: 10px 20px; background-color: #2D2F74; color: white; border: none; border-radius: 5px; cursor: pointer; width: 50%; font-size: 16px;" onmouseover="this.style.backgroundColor='#03cffc'" onmouseout="this.style.backgroundColor='#2D2F74'">
+                            CHECK <span id="czo-time-operation-custom"></span> at <span id="custom-check-out-time"></span>
+                        </button>    
+                        <br><br><br><br>
+                    </div>
+                </center>
+                <br>
+            </div>            
         </div>
         <!-- Main content -->
         <section class="content" style="min-height: 540px; margin-top: -40px;">
             <div class="row justify-content-md-center">
+                
                 <div class="col-md-10">
                     <div class="form-group czo-page-init czo-hidden">
                         <select class="form-control select2" data-placeholder="Select Project" id="project" style="width: 100%;" required>
-                            <option>Select Project</option>
+                            <option> Select Project </option>
                         </select>
+                        
+                        <div style="display: flex; align-items: flex-start; margin-top: 35px;">
+                            <input type="checkbox" id="acknowledge-checkbox-1" style="transform: scale(1.5); margin-top: 5px; margin-left: 8px;">
+                            <label for="acknowledge-checkbox-1" style="font-size: 16px; word-break: break-all;">
+                                &nbsp;&nbsp; I acknowledge I have reviewed and understood the SSSP, daily hazards and controls
+                            </label>
+                        </div>    
                     </div>
-                    <div class="form-group czo-check-out czo-hidden text-center" style="margin-top: -20px;">
-                        <br>
+                    <div class="form-group czo-check-out czo-hidden text-center" style="margin-top: -20px; display: none;">
                         <div class="icheck-primary d-inline" style="padding-left: 15px">
                             <input type="checkbox" id="meal_allowance">
                             <label style="font-size: 16px" for="meal_allowance">
@@ -93,31 +104,25 @@
                             <h5 class="czo-section-title" id="czo-project-name-next"></h5>
                         </div>
                     </div>
-                    <div class="form-group czo-hazzard-in czo-hidden">
+                    <div class="form-group czo-hazzard-in czo-hidden" style="margin-top: 50px;">
+                        <div class="row">
+                            <div class="col">
+                                <label style="font-size: 16px; color: #2D2F74;"><b>Daily Hazards & Controls</b></label>
+                            </div>
+                        </div>
+                        <textarea class="form-control" id="daily_hazards" rows="6" placeholder="Write daily hazards & control.." required disabled></textarea>
                         <br>
                         <a href="#0" class="btn btn-secondary btn-lg btn-block" id="view-plan-btn" style="background-color: white; color: black; border: 2px solid black;">VIEW SAFETY PLAN</a>
                         <br>
-                        <hr style="height: 1px; border: none; color: #333; background-color: #333;">
-                            <div class="row">
-                                <div class="col">
-                                    <label style="font-size: 16px">Daily Hazards & Controls</label>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-secondary" id="editButton" style="background-color: white; color: black; border: 2px solid black;">
-                                        <i class="fas fa-pencil-alt"></i>&nbsp; Edit
-                                    </button>                                
-                                </div>
-                            </div>
-                        <br>
-                        <textarea class="form-control" id="daily_hazards" rows="6" placeholder="Write daily hazards & control.." required disabled></textarea>
-                        <br>
                     </div>
-                    <div class="form-group czo-next-in czo-hidden">
-                        <div style="display: flex; align-items: flex-start;">
-                            <input type="checkbox" id="acknowledge-checkbox" style="transform: scale(1.5);">
-                            <label for="acknowledge-checkbox" style="font-size: 16px; word-break: break-all;">&nbsp;&nbsp; I acknowledge I have reviewed and understood the SSSP, daily hazards and controls</label>
-                        </div>                                                     
-                    </div>
+                    <!-- <div class="form-group czo-next-in czo-hidden">
+                        <div style="display: flex; align-items: flex-start; margin-top: 35px;">
+                            <input type="checkbox" id="acknowledge-checkbox" style="transform: scale(1.5); margin-top: 5px; margin-left: 8px;">
+                            <label for="acknowledge-checkbox" style="font-size: 16px; word-break: break-all;">
+                                &nbsp;&nbsp; I acknowledge I have reviewed and understood the SSSP, daily hazards and controls
+                            </label>
+                        </div>                                                   
+                    </div> -->
                 </div>
             </div>
 
@@ -125,10 +130,11 @@
             <!-- Button  -->
             <div class="row justify-content-md-center czo-button-row">
                 <div class="col col-md-10 mr-3">
-                    <div style="padding-left: 15px">
-                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right czo-hidden" id="nxt-btn">NEXT</a>
-                        <a href="#0" class="btn btn-primary btn-lg btn-block float-right czo-hidden" id="submit-btn">CHECK <span id="czo-time-operation"></span> at <span id="czo-check-in-time"></span></a>
-                    </div>
+                        <div style="padding-left: 15px">
+                            <a href="#0" class="btn btn-primary btn-lg btn-block float-right czo-hidden" id="nxt-btn">NEXT</a>
+                            <a href="#0" class="btn btn-primary btn-lg btn-block float-right czo-hidden" id="submit-btn">
+                                CHECK <span id="czo-time-operation"></span> at <span id="czo-check-in-time"></span></a>
+                        </div>
                 </div>
             </div>
             <!-- Button ends -->
@@ -141,6 +147,57 @@
         Copyright &copy; 2023 National Group LTD. All rights reserved.
     </footer>
 </div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <i class="fas fa-check-circle" style="font-size: 48px; color: #2D9CD5;"></i>
+                    <h2 class="modal-title" style="color: #2D9CD5;">Successfully Logged in!</h2>
+                    <p style="color: #969696;">You are now logged into</p>
+                    <h2 class="modal-title" style="color: #24225A;">Company Name</h2>
+                    <button type="button" id="doneButton" class="btn btn-primary" data-dismiss="modal" aria-label="Done">Done</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmationModal2" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                    <i class="fas fa-moon" style="font-size: 48px; color: #24225A;"></i>
+                    <h2 class="modal-title" style="color: #24225A;">Will you be staying away from home tonight?</h2>
+                    <button type="button" id="noButton" class="btn btn-primary" data-dismiss="modal" aria-label="NO">No, I will stay</button>
+                    <br>
+                    <button type="button" id="yesButton" class="btn btn-primary btn-transparent" style="display: inline; background-color: transparent; border-color: transparent; color: #007bff;" data-dismiss="modal" aria-label="Yes">Yes, I'll stay away</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-10 mx-auto d-flex flex-column align-items-center text-center">
+    
+    <div id="success-label" class="czo-hidden">
+        <label class="text-primary font-weight-bold" style="font-size: 1.5rem;">Check In Success!</label>
+    </div>
+</div>  
+
 <!-- ./wrapper -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -197,6 +254,7 @@
         setTimeout(() => {
             if (data.id) {
                 $('#czo-time-operation').text('OUT');
+                $('#czo-time-operation-custom').text('OUT');
                 $('.czo-check-out').toggleClass('czo-hidden');
                 $('#czo-project-name').text(data.projectText);
                 $('#storeProjectID').val(data.projectId);
@@ -209,9 +267,10 @@
                 $('#view-plan-btn').attr('href', selectedJobDocs).attr('target', '_blank');
 
                 $('#success-icon').toggleClass('czo-hidden');
-                $('#submit-btn').toggleClass('czo-hidden');
+                // $('#submit-btn').toggleClass('czo-hidden');
                 $('#czo-hazzard-out').css('margin-top', '-150px').toggleClass('czo-hidden');
                 $('#success-label').toggleClass('czo-hidden');
+
             } else {
                 $('.czo-page-init').toggleClass('czo-hidden');
                 $('.czo-check-in').toggleClass('czo-hidden');
@@ -226,6 +285,9 @@
             if (projectId) {
                 $('.czo-hazzard-in').toggleClass('czo-hidden');
             }
+            document.getElementById('submit-btn-custom').addEventListener('click', function() {
+                document.getElementById('submit-btn').click();
+            });
         }, 1000);
 
         
@@ -250,9 +312,19 @@
 
         $('#nxt-btn').click(() => {
             // Check if a project is selected
-            if (!selectedID) {
+            let project = document.getElementById('project').value;
+            console.log('project:', project);
+            if (project == "Select Project" ) {
                 alert('Please select a Project before submitting.');
-                return; // Prevent further execution
+                return; 
+            }
+
+            // Check if the acknowledge-checkbox is checked
+            if (!id){
+                if (!$('#acknowledge-checkbox-1').is(":checked")) {
+                    alert('Please acknowledge the SSSP, daily hazards and controls before submitting.');
+                    return; 
+                }
             }
             console.log('selectedProjectJD', selectedProjectJD);
             console.log('selectedName', selectedName);
@@ -263,6 +335,7 @@
 
             $('#view-plan-btn').attr('href', selectedProjectJD).attr('target', '_blank');
             $('#nxt-btn').hide();
+            $('#view-plan-btn').hide();
             $('.czo-page-init').hide();
             $('.czo-next-in').toggleClass('czo-hidden');
             $('.czo-hazzard-in').toggleClass('czo-hidden');
@@ -271,7 +344,7 @@
 
             let projectName = document.getElementById('storeProjectName').value;
             console.log('projectName:', projectName);
-            $('#czo-project-name-next').text(projectName);
+            $('#czo-project-name-next').html('<i class="fas fa-building"></i> ' + projectName);
         });
 
         $('#editButton').click(() => {
@@ -291,42 +364,80 @@
                 
                 if (id) {
                     values.check_out_time = ns_format.format({value: new Date(), type: ns_format.Type.DATETIME, timezone: ns_format.Timezone.PACIFIC_AUCKLAND});
-                    console.log('values.check_out_time', values.check_out_time)
+                    console.log('values.check_out_time', values.check_out_time);
 
-                    if (jQuery('#meal_allowance').is(":checked")) {
+                    $('#confirmationModal2').modal('show');
+
+                    document.getElementById('yesButton').addEventListener('click', function() {
+
                         values.meal_allowance = true;
-                    }
-                } else {
+
+                        record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify({id, values})});
+
+                        let isSuccess = updateDailyHazards()
+
+                        if (isSuccess){
+                            setTimeout(() => {
+                                document.main_form.submit();
+                            }, 1000);
+                        }
+                    });
+
+                    document.getElementById('noButton').addEventListener('click', function() {
+                        
+                        record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify({id, values})});
+
+                        let isSuccess = updateDailyHazards()
+
+                        if (isSuccess){
+                            setTimeout(() => {
+                                document.main_form.submit();
+                            }, 1000);
+                        }
+                    });
+
+                }
+                else {
                     values.date = ns_format.format({value: new Date(), type: ns_format.Type.DATETIME, timezone: ns_format.Timezone.PACIFIC_AUCKLAND});
                     values.check_in_time = ns_format.format({value: new Date(), type: ns_format.Type.DATETIME, timezone: ns_format.Timezone.PACIFIC_AUCKLAND});
                     console.log('values.date', values.date)
                     console.log('values.check_in_time', values.check_in_time)
                     values.project = ($('#project').select2('data')[0] || {}).id || '';
-                }
-                
-                record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify({id, values})});
-                
-                // Check if the acknowledge-checkbox is checked
-                if (!id){
-                    if (!$('#acknowledge-checkbox').is(":checked")) {
-                        ns_dialog.alert({message: 'Please acknowledge the SSSP, daily hazards and controls before submitting.'});
-                        return; // Prevent further execution
-                    }
+
+                   
+                    var companyName =  document.getElementById('storeProjectName').value;
+                    console.log('companyName', companyName)
+                    // Update the company name in the modal
+                    $('#confirmationModal').on('show.bs.modal', function () {
+                        $(this).find('.modal-body h2:last').text(companyName);
+                    });
+                    
+                    $('#confirmationModal').modal('show');
+
+                    document.getElementById('doneButton').addEventListener('click', function() {
+                        
+                        record.setValue({fieldId: 'custpage_czo_input_data', value: JSON.stringify({id, values})});
+
+                        let isSuccess = updateDailyHazards()
+
+                        if (isSuccess){
+                            setTimeout(() => {
+                                document.main_form.submit();
+                            }, 1000);
+                        }
+                    });
                 }
 
-                let isSuccess = updateDailyHazards()
 
-                if (isSuccess){
-                    setTimeout(() => {
-                        document.main_form.submit();
-                    }, 1000);
-                }
 
             });
         });
         setButtonTime('czo-check-in-time');
+        setButtonTime('custom-check-out-time');
+
         setInterval(() => {
             setButtonTime('czo-check-in-time');
+            setButtonTime('custom-check-out-time');
         }, 60000);
 
         function updateDailyHazards() {
@@ -334,23 +445,21 @@
             // Get the value of the 'dailyHazards' input field
             let dailyHazards = document.getElementById('daily_hazards').value;
             let projectId = document.getElementById('storeProjectID').value;
-            
-            // If 'dailyHazards' is found
-            if (dailyHazards) {
-                console.log('Project ID:', projectId);
-                console.log('dailyHazards', dailyHazards)
-                
-                // Redirect the user to another Suitelet page with projectId and projectPercent as parameters
-                let redirectURL = 'https://8572983.app.netsuite.com//app/site/hosting/scriptlet.nl?script=1814&deploy=1&projectId=' + projectId + '&dailyHazards=' + dailyHazards;
-                window.location.href = redirectURL;
-                return true;
-            } else {
-                console.log('Daily Hazards Not Found.');
-                alert('Please Fill in the Daily Hazards.');
-                return null;
-            }
-        }
 
+            console.log('Project ID:', projectId);
+            console.log('dailyHazards', dailyHazards)
+            
+            if (dailyHazards) {
+                dailyHazards = dailyHazards
+            } else {
+                dailyHazards = null
+            }
+
+            // Redirect the user to another Suitelet page with projectId and projectPercent as parameters
+            let redirectURL = 'https://8572983.app.netsuite.com//app/site/hosting/scriptlet.nl?script=1814&deploy=1&projectId=' + projectId + '&dailyHazards=' + dailyHazards;
+            window.location.href = redirectURL;
+            return true;
+        }
     });
 
 </script>

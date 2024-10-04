@@ -3,7 +3,6 @@ define([
 ], (czo_standardConstants) => {
     const constants = {...czo_standardConstants};
 
-    constants.EntityField.PROJECT_PERCENTAGE = 'custentity_project_percentage';
     constants.EntityField.SERVICE_ITEM = 'custentity_czo_service_item';
     constants.EntityField.FOREMAN = 'custentity_czo_foreman';
     constants.EntityField.ADDITIONAL_FOREMAN = 'custentity_czo_add_foreman';
@@ -17,7 +16,6 @@ define([
     constants.EntityField.METHOD = 'custentity_czo_method';
     constants.EntityField.DELIVERABLES = 'custentity_czo_key_deliverables';
     constants.EntityField.JOB_INTERNAL_ID = 'job.internalid';
-    constants.EntityField.STATUS = 'status';
 
     constants.SublistField.MEAL_ALLOWANCE = 'custcol_czo_meal_allowance';
 
@@ -45,7 +43,6 @@ define([
     constants.Daily5x5AssessmentField.CLIENT = 'custrecord_d5sa_client';
     constants.Daily5x5AssessmentField.PROJECT_MANAGER = 'custrecord_d5sa_project_manager';
     constants.Daily5x5AssessmentField.SALESMAN = 'custrecord_d5sa_salesman';
-    constants.Daily5x5AssessmentField.SITE_DESCRIPTION = 'custrecord_d5sa_site_description';
 
     constants.BeforeAfterLogField = {...czo_standardConstants.Field};
     constants.BeforeAfterLogField.PROJECT = 'custrecord_bal_project';
@@ -56,8 +53,6 @@ define([
     constants.TimesheetLogField.PROJECT = 'custrecord_tl_project';
     constants.TimesheetLogField.SUBMITTED_BY = 'custrecord_tl_submitted_by';
     constants.TimesheetLogField.DATE = 'custrecord_tl_date';
-    constants.TimesheetLogField.TIME_IN = 'custrecord_tl_in_time';
-    constants.TimesheetLogField.TIME_OUT = 'custrecord_tl_out_time';
     constants.TimesheetLogField.CHECK_IN_TIME = 'custrecord_tl_check_in_time';
     constants.TimesheetLogField.CHECK_OUT_TIME = 'custrecord_tl_check_out_time';
     constants.TimesheetLogField.MEAL_ALLOWANCE = 'custrecord_tl_meal_allowance';
@@ -125,13 +120,6 @@ define([
     constants.ProjectStatus = {
         IN_PROGRESS: '2'
     };
-
-    constants.CustomProjectStatus = [
-       // 17, // 3 Assigned to PM	
-        1, // 4 Scheduled	
-        28,	//5.5 Works Completed
-        2 // 5 In Progress	
-    ];
 
     return constants;
 });
